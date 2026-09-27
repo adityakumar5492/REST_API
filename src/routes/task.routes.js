@@ -1,12 +1,19 @@
 const express = require("express");
 const {
     getTasks,
-    getTask
+    getTask,
+    createTask,
+    updateTask,
+    deleteTask
 } = require("../controllers/task.controller");
 
 const router = express.Router(); //creates a mini Express application specifically for handling routes.
 
 router.get("/", getTasks);
 router.get("/:id", getTask);
+router.post("/", createTask);
+router.put("/:id", updateTask);
+router.delete("/:id",deleteTask);
+
 
 module.exports = router;
